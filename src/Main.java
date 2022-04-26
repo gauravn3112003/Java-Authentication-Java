@@ -15,7 +15,7 @@ public class Main {
 
     int choice;
     do {
-      System.out.println("********** USER AUTHENTICATION SYSTEM **********");
+      System.out.println("********** USER AUTH SYSTEM **********");
       System.out.println("1. Register \n2. Login \n3. Display User \n4. Exit");
       System.out.print("Enter the choice : ");
       choice = sc.nextInt();
