@@ -1,14 +1,16 @@
 package UserAuthentication;
 
+import UserAuthentication.RegisterLogin.*;
 import UserAuthentication.RegisterLogin.Register.MainData.MainData;
 import UserAuthentication.RegisterLogin.Register.Register;
-import UserAuthentication.RegisterLogin.*;
+import java.io.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class auth extends Register {
+
   int user = 1;
   int logIn = 0;
   Scanner s = new Scanner(System.in);
@@ -20,20 +22,32 @@ public class auth extends Register {
   // for Registration
   public void RegisterNow() {
     try {
-
       File Obj = new File("allUsers.txt");
+      Scanner read = new Scanner(Obj);
+
       if (Obj.createNewFile()) {
-        System.out.println("File " + Obj.getName() + " is created successfully.");
+        System.out.println(
+          "File " + Obj.getName() + " is created successfully."
+        );
       } else {
         System.out.println("File is already exist in the directory.");
       }
 
+      boolean err = read.hasNextLine();
+
+      System.out.println("Lines : " + err);
+
       System.out.println("********** Register Now **********");
       System.out.println();
-        u1[user] = new auth();
+      u1[user] = new auth();
+      if (err == false) {
         u1[user].getData();
+      } else {
+        System.out.println("Text Already Exit");
+      }
 
-        FileWriter Writer = new FileWriter(Obj);
+      FileWriter Writer = new FileWriter(Obj);
+      if (err == false) {
         for (int i = 0; i < user; i++) {
           Writer.write(user + " " + u1[user].Name + "\n");
           Writer.write(user + " " + u1[user].uName + "\n");
@@ -41,12 +55,10 @@ public class auth extends Register {
           Writer.close();
           System.out.println("Successfully written.");
         }
-        user = user + 1;
-        
-
+      } else {}
+      user = user + 1;
     } catch (IOException e) {
-      System.out.println("Internal Server Error");
-      e.printStackTrace();
+      System.out.println("Internal Server Error : " + e);
     }
   }
 
@@ -71,8 +83,9 @@ public class auth extends Register {
   // for Admin Login
   public void adminLogin() {
     L1.getUser();
-    if (L1.user.equals(Secure.AdminId) &&
-        L1.Password.equals(Secure.AdminPass)) {
+    if (
+      L1.user.equals(Secure.AdminId) && L1.Password.equals(Secure.AdminPass)
+    ) {
       System.out.println("********** All Users **********");
       System.out.println();
       for (int i = 1; i < user; i++) {
@@ -83,5 +96,4 @@ public class auth extends Register {
       System.out.println("Invalid Credential");
     }
   }
-
 }
