@@ -22,9 +22,33 @@ public class auth extends Register {
   // for Registration
   public void RegisterNow() {
     try {
-      File Obj = new File("allUsers.txt");
-      Scanner read = new Scanner(Obj);
+      System.out.println("********** Register Now **********");
+      System.out.println();
+      u1[user] = new auth();
+      u1[user].getData();
 
+      // Directory NAme
+      String path = "allUsers";
+      // To get no. of text files
+      int txt = 0, m = 0;
+      File noFile = new File(path);
+      String list[] = noFile.list();
+      for (String nm : list) {
+        File ele1 = new File(path + "/" + nm);
+        if (ele1.isFile() && list[m].endsWith("txt")) txt++;
+        // ele1.delete();
+        m++;
+      }
+      int number = txt + 1;
+
+      // To create "allUsers" Directory
+      File dirFile = new File(path);
+      dirFile.mkdir();
+
+      // To create specific username txt file
+      File Obj = new File(
+        dirFile + "/" + u1[user].uName + "_" + number + ".txt"
+      );
       if (Obj.createNewFile()) {
         System.out.println(
           "File " + Obj.getName() + " is created successfully."
@@ -33,31 +57,21 @@ public class auth extends Register {
         System.out.println("File is already exist in the directory.");
       }
 
-      boolean err = read.hasNextLine();
-
-      System.out.println("Lines : " + err);
-
-      System.out.println("********** Register Now **********");
-      System.out.println();
-      u1[user] = new auth();
-      if (err == false) {
-        u1[user].getData();
-      } else {
-        System.out.println("Text Already Exit");
-      }
-
       FileWriter Writer = new FileWriter(Obj);
-      if (err == false) {
-        for (int i = 0; i < user; i++) {
-          Writer.write(user + " " + u1[user].Name + "\n");
-          Writer.write(user + " " + u1[user].uName + "\n");
-          Writer.write(user + " " + u1[user].eMail + "\n");
-          Writer.close();
-          System.out.println("Successfully written.");
-        }
-      } else {}
+      for (int i = 0; i < user; i++) {
+        Writer.write("NAME : " + u1[user].Name + "\n");
+        Writer.write("USERNAME : " + u1[user].uName + "\n");
+        Writer.write("EMAIL : " + u1[user].eMail + "\n");
+        Writer.write("PASSWORD : " + u1[user].Pass + "\n");
+
+        Writer.close();
+        System.out.println("Successfully written.");
+      }
       user = user + 1;
+      System.out.println("Total Text files are : " + number);
     } catch (IOException e) {
+      System.out.println("Internal Server Error : " + e);
+    } catch (Exception e) {
       System.out.println("Internal Server Error : " + e);
     }
   }
