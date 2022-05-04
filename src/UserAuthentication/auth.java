@@ -35,24 +35,22 @@ public class auth extends Register {
       String list[] = noFile.list();
       for (String nm : list) {
         File ele1 = new File(path + "/" + nm);
-        if (ele1.isFile() && list[m].endsWith("txt")) txt++;
+        if (ele1.isFile() && list[m].endsWith("txt"))
+          txt++;
         // ele1.delete();
         m++;
       }
       int number = txt + 1;
-
       // To create "allUsers" Directory
       File dirFile = new File(path);
       dirFile.mkdir();
 
       // To create specific username txt file
       File Obj = new File(
-        dirFile + "/" + u1[user].uName + "_" + number + ".txt"
-      );
+          dirFile + "/" + u1[user].uName + "_" + number + ".txt");
       if (Obj.createNewFile()) {
         System.out.println(
-          "File " + Obj.getName() + " is created successfully."
-        );
+            "File " + Obj.getName() + " is created successfully.");
       } else {
         System.out.println("File is already exist in the directory.");
       }
@@ -69,6 +67,27 @@ public class auth extends Register {
       }
       user = user + 1;
       System.out.println("Total Text files are : " + number);
+
+      // To read txt File
+      System.out.println("All user :");
+
+      File display = new File(dirFile + "/" + u1[user-1].uName + "_" + number + ".txt");
+      Scanner Reader = new Scanner(display);
+      while (Reader.hasNextLine()) {
+        String data = Reader.nextLine();
+        System.out.println(data);
+      }
+      System.out.println("text : " + Reader.hasNextLine());
+      // for (int i = 1; i <=txt; i++) {
+      // Scanner Reader = new Scanner(display);
+      // while (Reader.hasNextLine()) {
+      // String data = Reader.nextLine();
+      // System.out.println(data);
+      // System.out.println();
+      // }
+      // System.out.println("text : "+Reader.hasNextLine());
+      // }
+
     } catch (IOException e) {
       System.out.println("Internal Server Error : " + e);
     } catch (Exception e) {
@@ -97,9 +116,7 @@ public class auth extends Register {
   // for Admin Login
   public void adminLogin() {
     L1.getUser();
-    if (
-      L1.user.equals(Secure.AdminId) && L1.Password.equals(Secure.AdminPass)
-    ) {
+    if (L1.user.equals(Secure.AdminId) && L1.Password.equals(Secure.AdminPass)) {
       System.out.println("********** All Users **********");
       System.out.println();
       for (int i = 1; i < user; i++) {

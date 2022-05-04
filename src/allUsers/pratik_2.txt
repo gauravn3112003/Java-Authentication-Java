@@ -1,4 +1,0 @@
-NAME : Pratik dahat
-USERNAME : pratik
-EMAIL : pratikdahat@gmail.com
-PASSWORD : gvrv_n

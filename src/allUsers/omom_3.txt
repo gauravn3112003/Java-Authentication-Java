@@ -1,4 +1,0 @@
-NAME : Om raut
-USERNAME : omom
-EMAIL : omraut@gmail.com
-PASSWORD : rautom
