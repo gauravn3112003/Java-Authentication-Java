@@ -1,8 +1,9 @@
-package UserAuthentication.RegisterLogin.Register;
+package User_Queries;
 
-import UserAuthentication.RegisterLogin.Register.MainData.MainData;
 // import java.lang.*;
 import java.util.*;
+
+import MainData.MainData;
 
 public class Register extends MainData {
 

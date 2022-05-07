@@ -1,10 +1,10 @@
-package UserAuthentication;
+package AccessControl;
 
-import UserAuthentication.RegisterLogin.Register.MainData.MainData;
-import UserAuthentication.RegisterLogin.Register.Register;
-import UserAuthentication.RegisterLogin.*;
+import User_Queries.Login;
+import User_Queries.Register;
 
 import java.util.Scanner;
+import MainData.MainData;
 
 public class auth extends Register {
   int user = 1;

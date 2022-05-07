@@ -1,4 +1,4 @@
-import UserAuthentication.auth;
+import AccessControl.*;
 import java.util.Scanner;
 
 public class Main {

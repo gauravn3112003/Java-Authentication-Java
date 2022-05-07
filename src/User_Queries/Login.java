@@ -1,4 +1,4 @@
-package UserAuthentication.RegisterLogin;
+package User_Queries;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package UserAuthentication.RegisterLogin.Register.MainData;
+package MainData;
 
  public class MainData {
    public String Name,uName,cUName,tPass,cPass,Pass,eMail;
