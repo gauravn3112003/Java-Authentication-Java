@@ -1,6 +1,10 @@
 package MainData;
 
- public class MainData {
-   public String Name,uName,cUName,tPass,cPass,Pass,eMail;
-   public final String AdminId = "gvrv_n03", AdminPass="gvrv_n";
+public class MainData {
+
+  // for Adding Books
+  public String bookName, author, date;
+  // for login and register
+  public String Name, uName, cUName, tPass, cPass, Pass, eMail;
+  public final String AdminId = "g", AdminPass = "g";
 }

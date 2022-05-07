@@ -1,4 +1,4 @@
-package User_Queries;
+package Template;
 
 // import java.lang.*;
 import java.util.*;

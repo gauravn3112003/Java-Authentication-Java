@@ -1,6 +1,5 @@
 
 package AccessControl;
-import AccessControl.*;
 import java.util.Scanner;
 public class MainAcce{
    public void start(){
@@ -9,7 +8,7 @@ public class MainAcce{
     auth A1 = new auth();
     do {
       System.out.println("********** USER AUTHENTICATION SYSTEM **********");
-      System.out.println("1. Register \n2. Login \n3. Display User \n4. Exit");
+      System.out.println("\n1. USER LOGIN \n2. ADMIN LOGIN \n3. EXIT");
       System.out.print("Enter the choice : ");
       choice = sc.nextInt();
       System.out.println();
@@ -17,21 +16,18 @@ public class MainAcce{
       System.out.println();
       switch (choice) {
         case 1:
-          A1.RegisterNow();
-          break;
-        case 2:
           A1.userLogin();
           break;
-        case 3:
+        case 2:
           A1.adminLogin();
           break;
-        case 4:
+        case 3:
           System.out.println();
           break;
         default:
           System.out.println("Inavlid Selection");
       }
-    } while (choice != 4);
+    } while (choice != 3);
 
    }
 }

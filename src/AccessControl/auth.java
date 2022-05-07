@@ -1,16 +1,18 @@
 package AccessControl;
 
-import User_Queries.Login;
-import User_Queries.Register;
-
+import Books_Queries.*;
+import MainData.*;
+import Template.*;
 import java.util.Scanner;
-import MainData.MainData;
 
-public class auth extends Register {
+public class auth {
+
   int user = 1;
   int logIn = 0;
   Scanner s = new Scanner(System.in);
   public String userAdmin, passwordAdmin;
+  Add a1 = new Add();
+  Display d1 = new Display();
   Login L1 = new Login();
   Register[] u1 = new Register[100];
   MainData Secure = new MainData();
@@ -37,27 +39,53 @@ public class auth extends Register {
   public void RegisterNow() {
     System.out.println("********** Register Now **********");
     System.out.println();
-    for (int i = 0; i < 1; i++) {
-      u1[user] = new auth();
-      u1[user].getData();
-      user = user + 1;
-    }
+    u1[user] = new Register();
+    u1[user].getData();
+    user = user + 1;
   }
 
   // for Admin Login
   public void adminLogin() {
+    int ch;
     L1.getUser();
-    if (L1.user.equals(Secure.AdminId) &&
-        L1.Password.equals(Secure.AdminPass)) {
-      System.out.println("********** All Users **********");
-      System.out.println();
-      for (int i = 1; i < user; i++) {
-        u1[i].display();
+    if (
+      L1.user.equals(Secure.AdminId) && L1.Password.equals(Secure.AdminPass)
+    ) {
+      do {
         System.out.println();
-      }
+        System.out.println(
+          "1. ADD USER \n2. DISPLAY USERS \n3. ADD BOOKS \n4. DISPLAY BOOK \n5. EXIT"
+        );
+        System.out.print("Enter the choice : ");
+        ch = s.nextInt();
+
+        switch (ch) {
+          case 1:
+            RegisterNow();
+            break;
+          case 2:
+            System.out.println("********** All Users **********");
+
+            for (int i = 1; i < user; i++) {
+              u1[i].display();
+              System.out.println();
+            }
+          case 3:
+            a1.add_Books();
+            break;
+          case 4:
+            d1.DisplayBooks();
+            break;
+          case 5:
+            System.out.println("Thanks you !");
+            break;
+          default:
+            System.out.println("Invalid Selectiojn");
+            break;
+        }
+      } while (ch != 5);
     } else {
       System.out.println("Invalid Credential");
     }
   }
-
 }
