@@ -6,9 +6,7 @@ import java.util.*;
 import MainData.MainData;
 
 public class Register extends MainData {
-
   Scanner sc = new Scanner(System.in);
-
   void cPassword() {
     System.out.print("Enter the Password : ");
     tPass = sc.nextLine();

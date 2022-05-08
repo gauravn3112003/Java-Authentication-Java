@@ -5,8 +5,10 @@ public class Add {
   public void add_Books() {
     System.out.println("********** ADD BOOKS NOW **********");
     t1.B1[t1.book] = new AddBooks();
-    t1.B1[t1.book].addBooks();
+    t1.B1[t1.book].add_Books();
     t1.book++;
     System.out.println("Successfully Added ");
+
+    t1.displayBoo();
   }
 }

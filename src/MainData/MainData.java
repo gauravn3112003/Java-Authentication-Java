@@ -1,7 +1,6 @@
 package MainData;
 
 public class MainData {
-
   // for Adding Books
   public String bookName, author, date;
   // for login and register
