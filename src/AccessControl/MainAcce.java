@@ -10,7 +10,6 @@ public class MainAcce {
   public void start() {
     Scanner sc = new Scanner(System.in);
     int choice;
-    auth A1 = new auth();
     do {
       System.out.println("********** USER AUTHENTICATION SYSTEM **********");
       System.out.println("1. LOGIN \n2. ADMIN LOGIN \n3. EXIT");

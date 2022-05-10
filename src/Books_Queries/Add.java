@@ -1,5 +1,5 @@
 package Books_Queries;
-import Template.AddBooks;
+import Template.*;
 public class Add {
   TotalBooks t1 = new TotalBooks();
   public void addBooks() {
@@ -8,7 +8,5 @@ public class Add {
     t1.B1[t1.book].add_Books();
     t1.book++;
     System.out.println("Successfully Added ");
-
-    t1.displayBoo();
   }
 }

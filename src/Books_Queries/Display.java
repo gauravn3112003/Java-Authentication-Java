@@ -1,6 +1,5 @@
 package Books_Queries;
 public class Display {
-
   public void displayBooks() {
     System.out.println("********** ALL BOOKS **********");
     TotalBooks m1 = new TotalBooks();

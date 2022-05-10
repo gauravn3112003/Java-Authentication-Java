@@ -2,8 +2,6 @@ package AdminControl;
 
 import AccessControl.*;
 import Books_Queries.*;
-// import MainData.*;
-// import Template.*;
 import java.util.*;
 
 public class Dashboard {
@@ -41,15 +39,9 @@ public class Dashboard {
             }
             break;
           case 3:
-            // t1.add_Books();
             a1.addBooks();
             break;
           case 4:
-            // System.out.println("********** All BOOKS **********");
-            // for (int i = 1; i < t1.book; i++) {
-            //   t1.B1[i].displayBook();
-            //   System.out.println();
-            // }
               d1.displayBooks();
             break;
           case 5:
