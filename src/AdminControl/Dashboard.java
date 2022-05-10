@@ -7,8 +7,10 @@ import Books_Queries.*;
 import java.util.*;
 
 public class Dashboard {
-    Scanner s = new Scanner(System.in);
 
+  Scanner s = new Scanner(System.in);
+  Add a1 = new Add();
+  Display d1 = new Display();
   public auth a = new auth();
   TotalBooks t1 = new TotalBooks();
 
@@ -39,15 +41,16 @@ public class Dashboard {
             }
             break;
           case 3:
-            t1.add_Books();
+            // t1.add_Books();
+            a1.addBooks();
             break;
           case 4:
-            System.out.println("********** All BOOKS **********");
-            for (int i = 1; i < t1.book; i++) {
-              t1.B1[i].displayBook();
-              System.out.println();
-            }
-
+            // System.out.println("********** All BOOKS **********");
+            // for (int i = 1; i < t1.book; i++) {
+            //   t1.B1[i].displayBook();
+            //   System.out.println();
+            // }
+              d1.displayBooks();
             break;
           case 5:
             System.out.println("Thanks you !");
