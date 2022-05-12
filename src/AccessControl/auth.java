@@ -1,6 +1,4 @@
 package AccessControl;
-
-import Books_Queries.*;
 import MainData.*;
 import Template.*;
 import User.*;
@@ -11,9 +9,8 @@ public class auth extends Dash_Board {
   public int user = 1;
   int logIn = 0;
   Scanner s = new Scanner(System.in);
-  Display d1 = new Display();
   AddBooks a1 = new AddBooks();
-  int ch ;
+  int ch;
   public Login L1 = new Login();
   public Register[] u1 = new Register[100];
   public MainData Secure = new MainData();
@@ -30,19 +27,14 @@ public class auth extends Dash_Board {
         logIn = 0;
       }
     }
-    if (logIn == 0) {
+    if (logIn == 1) {
       System.out.println("Login Successfull");
-      System.out.println(
-        "1. VIEW BOOKS \n2. ISSUE BOOK \n3. RETURN BOOK \n4. EXIT "
-      );
-      System.out.print("Enter the choice : ");
-      ch = s.nextInt();
-     
+      System.out.println();
+      userDashboard();
     } else {
       System.out.println("Invalid Credential");
     }
   }
-
 
   // for Registration
   public void RegisterNow() {

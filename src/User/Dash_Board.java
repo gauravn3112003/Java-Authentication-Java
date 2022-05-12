@@ -1,20 +1,20 @@
 package User;
 
 import java.util.*;
-public class Dash_Board {
+import Books_Queries.*;
+
+public class Dash_Board extends TotalBooks {
   int ch;
   Scanner sc = new Scanner(System.in);
-
   public void userDashboard() {
     do {
       System.out.println(
-        "1. VIEW BOOKS \n2. ISSUE BOOK \n3. RETURN BOOK \n4. EXIT "
-      );
+          "1. VIEW BOOKS \n2. ISSUE BOOK \n3. RETURN BOOK \n4. EXIT ");
       System.out.print("Enter the choice : ");
       ch = sc.nextInt();
       switch (ch) {
         case 1:
-          System.out.println("view Books..");
+          display_Books();
           break;
         case 2:
           System.out.println("Issue books...");

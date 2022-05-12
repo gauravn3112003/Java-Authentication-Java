@@ -4,26 +4,20 @@ import AccessControl.*;
 import Books_Queries.*;
 import java.util.*;
 
-public class Dashboard {
+public class Dashboard extends TotalBooks {
 
   Scanner s = new Scanner(System.in);
-  Add a1 = new Add();
-  Display d1 = new Display();
   public auth a = new auth();
-  TotalBooks t1 = new TotalBooks();
 
   public void dashboardAdmin() {
     int ch;
     a.L1.getUser();
-    if (
-      a.L1.user.equals(a.Secure.AdminId) &&
-      a.L1.Password.equals(a.Secure.AdminPass)
-    ) {
+    if (a.L1.user.equals(a.Secure.AdminId) &&
+        a.L1.Password.equals(a.Secure.AdminPass)) {
       do {
         System.out.println();
         System.out.println(
-          "1. ADD USER \n2. DISPLAY USERS \n3. ADD BOOKS \n4. DISPLAY BOOK \n5. EXIT"
-        );
+            "1. ADD USER \n2. DISPLAY USERS \n3. ADD BOOKS \n4. DISPLAY BOOK \n5. EXIT");
         System.out.print("Enter the choice : ");
         ch = s.nextInt();
 
@@ -39,10 +33,10 @@ public class Dashboard {
             }
             break;
           case 3:
-            a1.addBooks();
+            add_Books();
             break;
           case 4:
-              d1.displayBooks();
+            display_Books();
             break;
           case 5:
             System.out.println("Thanks you !");

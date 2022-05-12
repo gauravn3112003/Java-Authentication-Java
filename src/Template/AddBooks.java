@@ -13,13 +13,13 @@ public class AddBooks extends MainData {
     bookName = sc.nextLine();
     System.out.print("Enter the Author : ");
     author = sc.nextLine();
-    // date = d1.toString();
+    date = d1.toString();
   }
 
   public void displayBook() {
     System.out.println("Name of Books : " + bookName);
     System.out.println("Name of Author : " + author);
-    // System.out.println("Date of Adding Book : " + date);
+    System.out.println("Date of Adding Book : " + date);
     System.out.println();
   }
 }

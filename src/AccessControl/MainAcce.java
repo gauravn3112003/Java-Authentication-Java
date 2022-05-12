@@ -4,11 +4,10 @@ import AdminControl.*;
 import java.util.Scanner;
 
 public class MainAcce {
+  Scanner sc = new Scanner(System.in);
 
   Dashboard d = new Dashboard();
-
   public void start() {
-    Scanner sc = new Scanner(System.in);
     int choice;
     do {
       System.out.println("********** USER AUTHENTICATION SYSTEM **********");
@@ -32,5 +31,7 @@ public class MainAcce {
           System.out.println("Inavlid Selection");
       }
     } while (choice != 3);
+    sc.close();
   }
+
 }
